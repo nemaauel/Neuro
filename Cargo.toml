@@ -1,0 +1,19 @@
+[package]
+name = "neuro"
+version = "0.1.0"
+edition = "2021"
+description = "Neuro (.nr): indentation-based DSL runtime for neural networks"
+
+[[bin]]
+name = "neuro"
+path = "src/main.rs"
+
+[dependencies]
+pollster = "=0.3.0"
+wgpu = "=22.1.0"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
